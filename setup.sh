@@ -89,8 +89,8 @@ IP6=$(curl -6 -s icanhazip.com | cut -f1-4 -d':')
 
 echo "Internal ip = ${IP4}. Exteranl sub for ip6 = ${IP6}"
 
-FIRST_PORT=38111
-LAST_PORT=38411
+FIRST_PORT=36821
+LAST_PORT=37020
 
 gen_data >$WORKDIR/data.txt
 gen_iptables >$WORKDIR/boot_iptables.sh
