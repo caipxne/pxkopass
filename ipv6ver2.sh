@@ -1,7 +1,4 @@
-#!/bin/bash
-YUM=$(which yum)
-#####
-if [ "$YUM" ]; then
+#!/bin/sh
 echo > /etc/sysctl.conf
 ##
 tee -a /etc/sysctl.conf <<EOF
@@ -15,7 +12,7 @@ IPD=$(curl -4 -s icanhazip.com | cut -d"." -f4)
 ##
 if [ $IPC == 16 ]
 then
-   tee -a /etc/sysconfig/network-scripts/ifcfg-eth0 <<-EOF
+    tee -a /etc/sysconfig/network-scripts/ifcfg-eth0 <<-EOF
 	IPV6INIT=yes
 	IPV6_AUTOCONF=no
 	IPV6_DEFROUTE=yes
@@ -26,7 +23,7 @@ then
 	EOF
 elif [ $IPC == 17 ]
 then
-   tee -a /etc/sysconfig/network-scripts/ifcfg-eth0 <<-EOF
+   	tee -a /etc/sysconfig/network-scripts/ifcfg-eth0 <<-EOF
 	IPV6INIT=yes
 	IPV6_AUTOCONF=no
 	IPV6_DEFROUTE=yes
@@ -37,7 +34,7 @@ then
 	EOF
 elif [ $IPC == 13 ]
 then
-   tee -a /etc/sysconfig/network-scripts/ifcfg-eth0 <<-EOF
+   	tee -a /etc/sysconfig/network-scripts/ifcfg-eth0 <<-EOF
 	IPV6INIT=yes
 	IPV6_AUTOCONF=no
 	IPV6_DEFROUTE=yes
@@ -51,5 +48,3 @@ else
 fi
 
 service network restart
-fi
-echo 'Da tao IPV6 thanh cong!'
