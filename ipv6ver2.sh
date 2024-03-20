@@ -51,5 +51,5 @@ else
 fi
 
 service network restart
-
+fi
 echo 'Da tao IPV6 thanh cong!'
