@@ -81,3 +81,4 @@ else
 fi
 
 service network restart
+rm -rf ipv6.sh
