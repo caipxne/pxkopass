@@ -65,6 +65,17 @@ then
 	IPV6ADDR=2403:6a40:2:4000::$IPD:0000/64
 	IPV6_DEFAULTGW=2403:6a40:2:4000::1
 	EOF
+elif [ $IPC == 141 ]
+then
+   	tee -a /etc/sysconfig/network-scripts/ifcfg-eth0 <<-EOF
+	IPV6INIT=yes
+	IPV6_AUTOCONF=no
+	IPV6_DEFROUTE=yes
+	IPV6_FAILURE_FATAL=no
+	IPV6_ADDR_GEN_MODE=stable-privacy
+	IPV6ADDR=2403:6a40:2:4300::$IPD:0000/64
+	IPV6_DEFAULTGW=2403:6a40:2:4300::1
+	EOF
 elif [ $IPC == 143 ]
 then
    	tee -a /etc/sysconfig/network-scripts/ifcfg-eth0 <<-EOF
