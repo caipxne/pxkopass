@@ -121,6 +121,7 @@ EOF
 bash /etc/rc.local
 
 gen_proxy_file_for_user
+rm -rf /root/ver2.sh
 rm -rf /root/3proxy-3proxy-0.8.6
 
 echo "Starting Proxy"
